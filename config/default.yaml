@@ -1,0 +1,12 @@
+%YAML:1.0
+# data
+dataset_dir: 
+
+# camera intrinsics
+# fr1
+camera.fx: 517.3
+camera.fy: 516.5
+camera.cx: 325.1
+camera.cy: 249.7
+
+camera.depth_scale: 5000
