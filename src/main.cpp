@@ -27,12 +27,9 @@ using namespace cv;
 /// Function Definitions
 
 
-
-
 /**
  * @function main
- * @author Yang Qi
- * 		   William Yu
+ * @author Yang Qi & William Yu
  */
 int main ( int argc, char** argv )
 {
@@ -50,7 +47,7 @@ int main ( int argc, char** argv )
 		Mat src;
 		//不使用相机
 		//capture >> src;
-		Mat frame = imread("../data/ball4.jpg");
+		Mat frame = imread("../data/ball_6.jpg");
 		resize(frame, src, Size(1920, 1440), 0, 0, CV_INTER_LINEAR);
 		namedWindow("src", CV_WINDOW_NORMAL );
 		imshow("src", src );
@@ -60,7 +57,10 @@ int main ( int argc, char** argv )
 		Mat edge(src.rows, src.cols, CV_8UC1,Scalar(0));
 		Mat checkcolour(src.rows, src.cols, CV_8UC1, Scalar(0));
 
+		//前期模糊滤波
 		blur(src, src, Size(20, 20), Point(-1, -1));
+		imshow("src", src );
+		waitKey(0);
 
 		//-----------------------------------------------------
 		// [1]：基于颜色检测
@@ -70,29 +70,13 @@ int main ( int argc, char** argv )
 		imshow("checkcolour", checkcolour);
 		waitKey(0);
 
-		Canny(checkcolour, edge_img, 150, 120);
-		namedWindow("edge_img", CV_WINDOW_NORMAL);
-		imshow("edge_img", edge_img);
-		waitKey(0);
-
-		// //--三通道分离
-		// Mat mv[3];
-		// split(src, mv);
-		// namedWindow("G", CV_WINDOW_NORMAL);
-		// imshow("G", mv[0]);
-		// namedWindow("B", CV_WINDOW_NORMAL);
-		// imshow("B", mv[1]);
-		// namedWindow("R", CV_WINDOW_NORMAL);
-		// imshow("R", mv[2]);
-		// waitKey(0);
-
 		//-----------------------------------------------------
 		// 滤波系列
-		//-------------------------------------------------
-		// filter(checkcolour, edge_img);
-		// namedWindow("filter", CV_WINDOW_NORMAL);
-		// imshow("filter", edge_img);
-		// waitKey(0);
+		//-------------------------------------------------	
+		filter(checkcolour, edge_img);
+		namedWindow("filter", CV_WINDOW_NORMAL);
+		imshow("filter", edge_img);
+		waitKey(0);
 
 		//--边缘输出
 		edge2list(contours_dst, edge_img, hierarchy);
@@ -102,75 +86,141 @@ int main ( int argc, char** argv )
 		waitKey(0);
 
 		//-----------------------------------------------------
-		// [2]：基于形状圆形检测
+		//[2.1]：基于形状圆形检测
 		//-------------------------------------------------
 		vector<Point> points;
 		points = checkCircle(contours_dst);
 		cout<<points.size()<<endl;
 		//查看效果
 		for (int i = 0; i < points.size(); i++)
-			circle(src, points[i], 1, Scalar(0), 3);
+			circle(src, points[i], 2, Scalar(0,0,0), 3);
 		namedWindow("points", CV_WINDOW_NORMAL);
 		imshow("points", src);
 		waitKey(0);
 		cout<<points.size()<<endl;
-		
+
+
+
+
+//--2018.08.28-William Yu-添加: 采用霍夫变换检测形状
+//[2.2]opencv库函数 与 [2.1]自行编写的圆形检测算法进行效果对比
+//使用[2.2]时，取消下行注释；使用[2.1]时，注释掉下行
+
+// +_+ 不知道我描述的是否清楚，总之有些时候觉得，参数真的很难调，
+//      所以添加trackbar是个好选择，突然打算给某位同学布置点作业...
+
+#define useHoughCircles
+
+#ifdef useHoughCircles		
+		//-----------------------------------------------------
+		//[2.2]：OpenCV霍夫圆变换检测
+		//-------------------------------------------------
+		Mat mv[3];
+		split(src, mv);
+		namedWindow("G", CV_WINDOW_NORMAL);
+		imshow("G", mv[0]);
+		namedWindow("B", CV_WINDOW_NORMAL);
+		imshow("B", mv[1]);
+		namedWindow("R", CV_WINDOW_NORMAL);
+		imshow("R", mv[2]);
+		waitKey(0);
+		//二值化
+		threshold(mv[0], mv[0], 33, 255, THRESH_BINARY); 
+		imshow("G", mv[0]);
+		waitKey(0);
+		vector<Vec3f> circles; 
+		//vector<Point> points;
+		//[霍夫圆检测
+		//参数：src，输出集合，霍夫梯度，dp，最小圆心距，Canny阈值，累加阈值
+		HoughCircles(mv[0], circles, HOUGH_GRADIENT, 1.5, 10, 200, 25, 0, 0);//此处参数敏感度非常高，尤其注意累加阈值
+		if(!circles.size()) //若无结果，退出
+		{
+			cout<<"No circle checked!"<<endl;
+			waitKey(0);
+			return 0;
+		}
+		for (size_t i = 0; i < circles.size(); i++)
+		{
+			//输出检测到的圆的圆心像素坐标
+			Point center(cvRound(circles[i][0]), cvRound(circles[i][1]));
+			points.push_back(center);
+			cout << center << endl;  
+			int radius = cvRound(circles[i][2]);
+			circle(src, center, radius, Scalar(155, 50, 255), 15, 8, 0);
+		}
+		namedWindow("circle", WINDOW_KEEPRATIO);
+		imshow("circle", src);
+		waitKey(0);
+#endif
+
+
+
+
+
+
+
+
+
+
 
 		//************************************************************************************************
 		// STEP2：坐标修正
 		//****************************************************************************************
-		// //--坐标修正
-		// //参数
-		// double center_x, center_y;//中心值坐标
-		// float kx, ky, bx, by;   //kx,ky为系数，bx,by为偏置
-		// kx = 1;
-		// ky = 1;
-		// bx = 0;
-		// by = 0;
+		//--坐标修正
+		//参数
+		double center_x, center_y;//中心值坐标
+		float kx, ky, bx, by;   //kx,ky为系数，bx,by为偏置
+		kx = 1;
+		ky = 1;
+		bx = 0;
+		by = 0;
 
-		// //--相机内参
-		// double fx = 2671.557;
-		// double fy = 2680.628;
-		// double cx = 1660.216;
-		// double cy = 1213.749;       
+		//--相机内参
+		double fx = 2671.557;
+		double fy = 2680.628;
+		double cx = 1660.216;
+		double cy = 1213.749;       
 		
-		// //--相机位姿参数
-		// int theta_1=77;//水平视场角
-		// int theta_2=53;//垂直视场角
-		// int pitch=60;//俯仰角
-		// int height=30;//车高
-		// int theta_x1;//绝对值
+		//--相机位姿参数
+		int theta_1=77;//水平视场角
+		int theta_2=53;//垂直视场角
+		int pitch=60;//俯仰角
+		int height=30;//车高
+		int theta_x1;//绝对值
 		
 		
-		// //坐标转换
-		// for (int i = 0; i < points.size(); i++)
-		// {
-		// 	int x = points[i].x;
-		// 	int y = points[i].y;
+		//坐标转换
+		for (int i = 0; i < points.size(); i++)
+		{
+			int x = points[i].x;
+			int y = points[i].y;
 			
-		// 	//x = x*fx + cx;
-		// 	//y = y*fy + cy;
-		// 	x = x / 0.588;
-		// 	y = y / 0.588;
-		// 	x = kx *x + bx;
-		// 	y = ky *y + by;
+			//x = x*fx + cx;
+			//y = y*fy + cy;
+			x = x / 0.588;
+			y = y / 0.588;
+			x = kx *x + bx;
+			y = ky *y + by;
 
-		// 	//printf("the x y is %d,%d", x, y);
+			//printf("the x y is %d,%d", x, y);
 
-		// 	int theta_x = (x - 1660)*theta_1 / 3264;//极坐标角度值可输出
-		// 	//theta_x = theta_x - 0;
+			int theta_x = (x - 1660)*theta_1 / 3264;//极坐标角度值可输出
+			//theta_x = theta_x - 0;
 			
-		// 	int distance_y = 0.665*height * tan((((1213 - y)*theta_2 / 2448) + pitch)*pi / 180)-36;  //直角坐标y输出
-		// 	//if(theta_x < 0)
-		// 		//theta_x1 = -theta_x;
-		// 	//distance_y = 720+ distance_y;
-		// 	x = distance_y*tan(theta_x*pi / 180);
-		// 	points[i].x = x;
-		// 	points[i].y = distance_y;
-		// 	printf("the x is%d,y is%d", x, y);
-		// }
+			int distance_y = 0.665*height * tan((((1213 - y)*theta_2 / 2448) + pitch)*pi / 180)-36;  //直角坐标y输出
+			//if(theta_x < 0)
+				//theta_x1 = -theta_x;
+			//distance_y = 720+ distance_y;
+			x = distance_y * tan( theta_x*pi / 180 );
+			points[i].x = x;
+			points[i].y = distance_y;
+			printf("the x is%d,y is%d", x, y);
+		}
 
 		
+
+
+
 
 
 
@@ -188,10 +238,28 @@ int main ( int argc, char** argv )
 		// Mat src;
 		// vector<Point> points;
 		// get_Random_points(points, 8);
-		
+
 
 		vector<Point>  Points_checked;
 		src = get_centroid(points, Points_checked); ///处理,获取大轮廓形心
+		cout<<" point checked!"<<Points_checked.size()<<endl;
+		if(!Points_checked.size()) //无结果，退出
+		{
+			cout<<"No point checked!"<<endl;
+			waitKey(0);
+			return 0;
+		}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -217,7 +285,7 @@ int main ( int argc, char** argv )
 		cout << "times cost:" << (et1 - st1) / (double)cvGetTickFrequency() / 1000.0 << "milliseconds\n\n";
 		
 		
-		//2017-10-31更新,加入偏置，更改下列语句块
+		//2017-10-31更新：加入偏置，更改下列语句块
 		//Mat Method_of_exhaustion_src = src.clone();
 		//line(Method_of_exhaustion_src, Point(0, 0), path2[0], Scalar(255, 0, 0), 1, 8);
 		//for (int i = 0; i < path2.size() - 1; i++)
@@ -258,7 +326,7 @@ int main ( int argc, char** argv )
 		cout << "times cost:" << (et2 - st2) / (double)cvGetTickFrequency() / 1000.0 << "milliseconds\n\n";
 
 
-		//2017-10-31更新,加入偏置，更改下列语句块
+		//2017-10-31更新：加入偏置，更改下列语句块
 		//Mat Greedy_Algorithm_src = src.clone();
 		//line(Greedy_Algorithm_src, Point(0, 0), path2[0], Scalar(255, 0, 0), 1, 8);
 		//for (int i = 0; i < path2.size() - 1; i++)

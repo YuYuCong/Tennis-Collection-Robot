@@ -1,9 +1,5 @@
 #include"function_declare.h"
 
-#define THRESHOL_CLASS (double)30
-
-
-
 /// Function Definitions  
 
 /**
@@ -11,6 +7,7 @@
  * @author Yang Qi
  * @brief 计算中心点
  */
+//--关于此函数：这个圆形判断方法异常简陋，可改进的地方很多
 bool calcCenter(vector<Point> &contour, Point &center) 
 {
 	vector<float> distance;
@@ -67,14 +64,14 @@ bool calcCenter(vector<Point> &contour, Point &center)
 	}
 	double dis_class = dis_all / distance.size();
 	
-	if (dis_class < THRESHOL_CLASS) {
+	if (dis_class < THRESHOL_CLASS) {  //阈值调控，只保留阈值以下的轮廓
 		return true;
 	}
 	else {
 		return false;
 	}
 }
-//--关于上述函数：这个圆形判断方法异常简陋，可改进的地方很多
+
 
 
 

@@ -10,6 +10,7 @@
         "hash_set": "cpp",
         "slist": "cpp",
         "initializer_list": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "bitset": "cpp"
     }
 }

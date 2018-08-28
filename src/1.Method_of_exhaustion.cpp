@@ -12,7 +12,7 @@ vector<Point> Method_of_exhaustion(vector<Point>&center_points)
 	vector<Point> path1;
 
 	//检查传入的中心点数和坐标
-	cout << "网球坐标:" << "  ";
+	cout << "网球中心点坐标:" << "  ";
 	for (int i = 0; i <center_points.size(); i++) {
 		cout << center_points[i] << ' ';
 	}
