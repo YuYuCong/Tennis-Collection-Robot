@@ -20,6 +20,7 @@ Point each_getCentroid(vector<Point> list)
 		data_pts.at<double>(i, 1) = list[i].y;
 	}
 
+	//PCA主成分分析
 	PCA pca_analysis(data_pts, Mat(), CV_PCA_DATA_AS_ROW);
 
 	Point cntr = Point(static_cast<int>(pca_analysis.mean.at<double>(0, 0)),

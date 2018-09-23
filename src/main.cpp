@@ -1,5 +1,5 @@
 /*=================================================================================
- *	                    Copyleft! 2018 William Yu
+ *                      Copyleft! 2018 William Yu
  *          Some rights reserved：CC(creativecommons.org)BY-NC-SA
  *                      Copyleft! 2018 William Yu
  *      版权部分所有，遵循CC(creativecommons.org)BY-NC-SA协议授权方式使用
@@ -8,11 +8,11 @@
  * Description             : 圆形物体检测与收集路径规划
  * Reference               : 
  * Programmer(s)           : William Yu, windmillyucong@163.com
- * 							 Yang Qi, 1214201832@qq.com
+ *                           Yang Qi, 1214201832@qq.com
  * Company                 : HUST, DMET国家重点实验室FOCUS团队
- * Modification History	   : ver1.0, 2017.09.26, William Yu
+ * Modification History    : ver1.0, 2017.09.26, William Yu
  *                           ver1.1, 2018.07.21, William Yu, add notes.
- * 							 ver1.2, 2018.08.27, William Yu, move to linux project
+ *                           ver1.2, 2018.08.27, William Yu, move to linux project
 =================================================================================*/
 
 /// Include Files 
@@ -107,6 +107,7 @@ int main ( int argc, char** argv )
 //使用[2.2]时，取消下行注释；使用[2.1]时，注释掉下行
 
 // +_+ 不知道我描述的是否清楚，总之有些时候觉得，参数真的很难调，
+//		自己写的一大堆反而可能不及一句函数调好了参数效果好，
 //      所以添加trackbar是个好选择，突然打算给某位同学布置点作业...
 
 #define useHoughCircles
@@ -130,7 +131,7 @@ int main ( int argc, char** argv )
 		waitKey(0);
 		vector<Vec3f> circles; 
 		//vector<Point> points;
-		//[霍夫圆检测
+		//[霍夫圆检测]
 		//参数：src，输出集合，霍夫梯度，dp，最小圆心距，Canny阈值，累加阈值
 		HoughCircles(mv[0], circles, HOUGH_GRADIENT, 1.5, 10, 200, 25, 0, 0);//此处参数敏感度非常高，尤其注意累加阈值
 		if(!circles.size()) //若无结果，退出

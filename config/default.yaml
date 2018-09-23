@@ -1,8 +1,12 @@
 %YAML:1.0
+# 此文件暂且并未使用
+
 # data
+# 数据集地址
 dataset_dir: 
 
 # camera intrinsics
+# 相机内参
 # fr1
 camera.fx: 517.3
 camera.fy: 516.5
