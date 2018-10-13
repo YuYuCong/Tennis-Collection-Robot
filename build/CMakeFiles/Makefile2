@@ -54,23 +54,23 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/will/code/0.daily_code/37.Tennis
+CMAKE_SOURCE_DIR = /home/yuqing/cyq/code/Tennis-Collection-Robot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/will/code/0.daily_code/37.Tennis/build
+CMAKE_BINARY_DIR = /home/yuqing/cyq/code/Tennis-Collection-Robot/build
 
 #=============================================================================
 # Directory level rules for directory src
 
 # Convenience name for "all" pass in the directory.
-src/all: src/CMakeFiles/main.dir/all
 src/all: src/CMakeFiles/tennis.dir/all
+src/all: src/CMakeFiles/main.dir/all
 
 .PHONY : src/all
 
 # Convenience name for "clean" pass in the directory.
-src/clean: src/CMakeFiles/main.dir/clean
 src/clean: src/CMakeFiles/tennis.dir/clean
+src/clean: src/CMakeFiles/main.dir/clean
 
 .PHONY : src/clean
 
@@ -80,50 +80,13 @@ src/preinstall:
 .PHONY : src/preinstall
 
 #=============================================================================
-# Target rules for target src/CMakeFiles/main.dir
-
-# All Build rule for target.
-src/CMakeFiles/main.dir/all: src/CMakeFiles/tennis.dir/all
-	$(MAKE) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/depend
-	$(MAKE) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/will/code/0.daily_code/37.Tennis/build/CMakeFiles --progress-num=1,2 "Built target main"
-.PHONY : src/CMakeFiles/main.dir/all
-
-# Include target in all.
-all: src/CMakeFiles/main.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-src/CMakeFiles/main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/will/code/0.daily_code/37.Tennis/build/CMakeFiles 12
-	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/main.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/will/code/0.daily_code/37.Tennis/build/CMakeFiles 0
-.PHONY : src/CMakeFiles/main.dir/rule
-
-# Convenience name for target.
-main: src/CMakeFiles/main.dir/rule
-
-.PHONY : main
-
-# clean rule for target.
-src/CMakeFiles/main.dir/clean:
-	$(MAKE) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/clean
-.PHONY : src/CMakeFiles/main.dir/clean
-
-# clean rule for target.
-clean: src/CMakeFiles/main.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
 # Target rules for target src/CMakeFiles/tennis.dir
 
 # All Build rule for target.
 src/CMakeFiles/tennis.dir/all:
 	$(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/depend
 	$(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/will/code/0.daily_code/37.Tennis/build/CMakeFiles --progress-num=3,4,5,6,7,8,9,10,11,12 "Built target tennis"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yuqing/cyq/code/Tennis-Collection-Robot/build/CMakeFiles --progress-num=3,4,5,6,7,8,9,10,11,12 "Built target tennis"
 .PHONY : src/CMakeFiles/tennis.dir/all
 
 # Include target in all.
@@ -133,9 +96,9 @@ all: src/CMakeFiles/tennis.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/tennis.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/will/code/0.daily_code/37.Tennis/build/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yuqing/cyq/code/Tennis-Collection-Robot/build/CMakeFiles 10
 	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/tennis.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/will/code/0.daily_code/37.Tennis/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yuqing/cyq/code/Tennis-Collection-Robot/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/tennis.dir/rule
 
 # Convenience name for target.
@@ -150,6 +113,43 @@ src/CMakeFiles/tennis.dir/clean:
 
 # clean rule for target.
 clean: src/CMakeFiles/tennis.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target src/CMakeFiles/main.dir
+
+# All Build rule for target.
+src/CMakeFiles/main.dir/all: src/CMakeFiles/tennis.dir/all
+	$(MAKE) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/depend
+	$(MAKE) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yuqing/cyq/code/Tennis-Collection-Robot/build/CMakeFiles --progress-num=1,2 "Built target main"
+.PHONY : src/CMakeFiles/main.dir/all
+
+# Include target in all.
+all: src/CMakeFiles/main.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+src/CMakeFiles/main.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yuqing/cyq/code/Tennis-Collection-Robot/build/CMakeFiles 12
+	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/main.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yuqing/cyq/code/Tennis-Collection-Robot/build/CMakeFiles 0
+.PHONY : src/CMakeFiles/main.dir/rule
+
+# Convenience name for target.
+main: src/CMakeFiles/main.dir/rule
+
+.PHONY : main
+
+# clean rule for target.
+src/CMakeFiles/main.dir/clean:
+	$(MAKE) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/clean
+.PHONY : src/CMakeFiles/main.dir/clean
+
+# clean rule for target.
+clean: src/CMakeFiles/main.dir/clean
 
 .PHONY : clean
 

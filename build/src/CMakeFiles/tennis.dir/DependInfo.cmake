@@ -4,22 +4,22 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/will/code/0.daily_code/37.Tennis/src/1.Method_of_exhaustion.cpp" "/home/will/code/0.daily_code/37.Tennis/build/src/CMakeFiles/tennis.dir/1.Method_of_exhaustion.cpp.o"
-  "/home/will/code/0.daily_code/37.Tennis/src/2.Greedy_Algorithm.cpp" "/home/will/code/0.daily_code/37.Tennis/build/src/CMakeFiles/tennis.dir/2.Greedy_Algorithm.cpp.o"
-  "/home/will/code/0.daily_code/37.Tennis/src/checkCircle.cpp" "/home/will/code/0.daily_code/37.Tennis/build/src/CMakeFiles/tennis.dir/checkCircle.cpp.o"
-  "/home/will/code/0.daily_code/37.Tennis/src/checkColour.cpp" "/home/will/code/0.daily_code/37.Tennis/build/src/CMakeFiles/tennis.dir/checkColour.cpp.o"
-  "/home/will/code/0.daily_code/37.Tennis/src/edge2list.cpp" "/home/will/code/0.daily_code/37.Tennis/build/src/CMakeFiles/tennis.dir/edge2list.cpp.o"
-  "/home/will/code/0.daily_code/37.Tennis/src/filter.cpp" "/home/will/code/0.daily_code/37.Tennis/build/src/CMakeFiles/tennis.dir/filter.cpp.o"
-  "/home/will/code/0.daily_code/37.Tennis/src/get_Random_points.cpp" "/home/will/code/0.daily_code/37.Tennis/build/src/CMakeFiles/tennis.dir/get_Random_points.cpp.o"
-  "/home/will/code/0.daily_code/37.Tennis/src/get_centroid.cpp" "/home/will/code/0.daily_code/37.Tennis/build/src/CMakeFiles/tennis.dir/get_centroid.cpp.o"
-  "/home/will/code/0.daily_code/37.Tennis/src/movemet.cpp" "/home/will/code/0.daily_code/37.Tennis/build/src/CMakeFiles/tennis.dir/movemet.cpp.o"
+  "/home/yuqing/cyq/code/Tennis-Collection-Robot/src/1.Method_of_exhaustion.cpp" "/home/yuqing/cyq/code/Tennis-Collection-Robot/build/src/CMakeFiles/tennis.dir/1.Method_of_exhaustion.cpp.o"
+  "/home/yuqing/cyq/code/Tennis-Collection-Robot/src/2.Greedy_Algorithm.cpp" "/home/yuqing/cyq/code/Tennis-Collection-Robot/build/src/CMakeFiles/tennis.dir/2.Greedy_Algorithm.cpp.o"
+  "/home/yuqing/cyq/code/Tennis-Collection-Robot/src/checkCircle.cpp" "/home/yuqing/cyq/code/Tennis-Collection-Robot/build/src/CMakeFiles/tennis.dir/checkCircle.cpp.o"
+  "/home/yuqing/cyq/code/Tennis-Collection-Robot/src/checkColour.cpp" "/home/yuqing/cyq/code/Tennis-Collection-Robot/build/src/CMakeFiles/tennis.dir/checkColour.cpp.o"
+  "/home/yuqing/cyq/code/Tennis-Collection-Robot/src/edge2list.cpp" "/home/yuqing/cyq/code/Tennis-Collection-Robot/build/src/CMakeFiles/tennis.dir/edge2list.cpp.o"
+  "/home/yuqing/cyq/code/Tennis-Collection-Robot/src/filter.cpp" "/home/yuqing/cyq/code/Tennis-Collection-Robot/build/src/CMakeFiles/tennis.dir/filter.cpp.o"
+  "/home/yuqing/cyq/code/Tennis-Collection-Robot/src/get_Random_points.cpp" "/home/yuqing/cyq/code/Tennis-Collection-Robot/build/src/CMakeFiles/tennis.dir/get_Random_points.cpp.o"
+  "/home/yuqing/cyq/code/Tennis-Collection-Robot/src/get_centroid.cpp" "/home/yuqing/cyq/code/Tennis-Collection-Robot/build/src/CMakeFiles/tennis.dir/get_centroid.cpp.o"
+  "/home/yuqing/cyq/code/Tennis-Collection-Robot/src/movemet.cpp" "/home/yuqing/cyq/code/Tennis-Collection-Robot/build/src/CMakeFiles/tennis.dir/movemet.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/usr/local/include"
-  "/usr/local/include/opencv"
+  "/opt/ros/kinetic/include/opencv-3.3.1-dev"
+  "/opt/ros/kinetic/include/opencv-3.3.1-dev/opencv"
   "../include"
   )
 

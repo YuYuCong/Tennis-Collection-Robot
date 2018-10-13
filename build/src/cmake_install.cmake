@@ -1,4 +1,4 @@
-# Install script for directory: /home/will/code/0.daily_code/37.Tennis/src
+# Install script for directory: /home/yuqing/cyq/code/Tennis-Collection-Robot/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
