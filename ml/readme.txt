@@ -53,6 +53,14 @@ cd bin
 
 
 
+# 可能出现的问题
+
+$ ./0.allinone <../data/ball_3.jpg><../data/ball_6.jpg>
+bash: 未预期的符号 `<' 附近有语法错误
+
+解决方法：$ ./0.allinone '../data/ball_3.jpg' '../data/ball_6.jpg'
+
+
 
 # 建议
 用比较复杂的环境来训练模型，

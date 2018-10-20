@@ -35,6 +35,13 @@ int main ( int argc, char** argv )
 {
 	//不使用相机
 	//VideoCapture capture(1);
+	
+	//不使用视频
+	//VideoCapture cap;
+	//cap.open("../data/tennis_3.mp4");
+	//if(!cap.isOpened())
+	//return;
+	
 	//while (1)
 	//{
 
@@ -47,6 +54,12 @@ int main ( int argc, char** argv )
 		Mat src;
 		//不使用相机
 		//capture >> src;
+		
+		//不使用视频
+		//cap>> src;
+		//if(src.empty())
+		//break;
+
 		Mat frame = imread("../data/ball_6.jpg");
 		resize(frame, src, Size(1920, 1440), 0, 0, CV_INTER_LINEAR);
 		namedWindow("src", CV_WINDOW_NORMAL );
@@ -60,7 +73,7 @@ int main ( int argc, char** argv )
 		//前期模糊滤波
 		blur(src, src, Size(20, 20), Point(-1, -1));
 		imshow("src", src );
-		waitKey(0);
+		waitKey(0);                  //为什么均值滤波不能也放进filter.cpp?   by Sunnie 20181020
 
 		//-----------------------------------------------------
 		// [1]：基于颜色检测
