@@ -48,18 +48,18 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/will/code/0.daily_code/37.Tennis
+CMAKE_SOURCE_DIR = /home/yuqing/cyq/code/Tennis-Collection-Robot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/will/code/0.daily_code/37.Tennis/build
+CMAKE_BINARY_DIR = /home/yuqing/cyq/code/Tennis-Collection-Robot/build
 
 #=============================================================================
 # Targets provided globally by CMake.
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/will/code/0.daily_code/37.Tennis/build/CMakeFiles /home/will/code/0.daily_code/37.Tennis/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yuqing/cyq/code/Tennis-Collection-Robot/build/CMakeFiles /home/yuqing/cyq/code/Tennis-Collection-Robot/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/will/code/0.daily_code/37.Tennis/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yuqing/cyq/code/Tennis-Collection-Robot/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,19 +111,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named main
-
-# Build rule for target.
-main: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 main
-.PHONY : main
-
-# fast build rule for target.
-main/fast:
-	$(MAKE) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/build
-.PHONY : main/fast
-
-#=============================================================================
 # Target rules for targets named tennis
 
 # Build rule for target.
@@ -136,6 +123,19 @@ tennis/fast:
 	$(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/build
 .PHONY : tennis/fast
 
+#=============================================================================
+# Target rules for targets named main
+
+# Build rule for target.
+main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 main
+.PHONY : main
+
+# fast build rule for target.
+main/fast:
+	$(MAKE) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/build
+.PHONY : main/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -144,8 +144,8 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... main"
 	@echo "... tennis"
+	@echo "... main"
 .PHONY : help
 
 

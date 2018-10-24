@@ -1,4 +1,4 @@
-# Install script for directory: /home/will/code/0.daily_code/37.Tennis
+# Install script for directory: /home/yuqing/cyq/code/Tennis-Collection-Robot
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,7 +34,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/will/code/0.daily_code/37.Tennis/build/src/cmake_install.cmake")
+  include("/home/yuqing/cyq/code/Tennis-Collection-Robot/build/src/cmake_install.cmake")
 
 endif()
 
@@ -46,5 +46,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/will/code/0.daily_code/37.Tennis/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/yuqing/cyq/code/Tennis-Collection-Robot/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

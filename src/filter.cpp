@@ -12,7 +12,7 @@ void filter(Mat &src, Mat &dst)
 	waitKey(0);
 
 	uchar *dst_data;
-	uchar *out_data;
+	uchar *out_data;             //为什么要定义这两个指针啊？程序中并未用到。 by Sunnie 20181020
 
 	Mat element1 = getStructuringElement(MORPH_RECT, Size(15, 15));
 	Mat element2 = getStructuringElement(MORPH_RECT, Size(10, 10));

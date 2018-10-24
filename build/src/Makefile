@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/will/code/0.daily_code/37.Tennis
+CMAKE_SOURCE_DIR = /home/yuqing/cyq/code/Tennis-Collection-Robot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/will/code/0.daily_code/37.Tennis/build
+CMAKE_BINARY_DIR = /home/yuqing/cyq/code/Tennis-Collection-Robot/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -69,8 +69,8 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/will/code/0.daily_code/37.Tennis/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/will/code/0.daily_code/37.Tennis/build/CMakeFiles /home/will/code/0.daily_code/37.Tennis/build/src/CMakeFiles/progress.marks
-	cd /home/will/code/0.daily_code/37.Tennis/build && $(MAKE) -f CMakeFiles/Makefile2 src/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/will/code/0.daily_code/37.Tennis/build/CMakeFiles 0
+	cd /home/yuqing/cyq/code/Tennis-Collection-Robot/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/yuqing/cyq/code/Tennis-Collection-Robot/build/CMakeFiles /home/yuqing/cyq/code/Tennis-Collection-Robot/build/src/CMakeFiles/progress.marks
+	cd /home/yuqing/cyq/code/Tennis-Collection-Robot/build && $(MAKE) -f CMakeFiles/Makefile2 src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yuqing/cyq/code/Tennis-Collection-Robot/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/will/code/0.daily_code/37.Tennis/build && $(MAKE) -f CMakeFiles/Makefile2 src/clean
+	cd /home/yuqing/cyq/code/Tennis-Collection-Robot/build && $(MAKE) -f CMakeFiles/Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,37 +97,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/will/code/0.daily_code/37.Tennis/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd /home/yuqing/cyq/code/Tennis-Collection-Robot/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/will/code/0.daily_code/37.Tennis/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd /home/yuqing/cyq/code/Tennis-Collection-Robot/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/will/code/0.daily_code/37.Tennis/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/yuqing/cyq/code/Tennis-Collection-Robot/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
-src/CMakeFiles/main.dir/rule:
-	cd /home/will/code/0.daily_code/37.Tennis/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/main.dir/rule
-.PHONY : src/CMakeFiles/main.dir/rule
-
-# Convenience name for target.
-main: src/CMakeFiles/main.dir/rule
-
-.PHONY : main
-
-# fast build rule for target.
-main/fast:
-	cd /home/will/code/0.daily_code/37.Tennis/build && $(MAKE) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/build
-.PHONY : main/fast
-
-# Convenience name for target.
 src/CMakeFiles/tennis.dir/rule:
-	cd /home/will/code/0.daily_code/37.Tennis/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/tennis.dir/rule
+	cd /home/yuqing/cyq/code/Tennis-Collection-Robot/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/tennis.dir/rule
 .PHONY : src/CMakeFiles/tennis.dir/rule
 
 # Convenience name for target.
@@ -137,8 +122,23 @@ tennis: src/CMakeFiles/tennis.dir/rule
 
 # fast build rule for target.
 tennis/fast:
-	cd /home/will/code/0.daily_code/37.Tennis/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/build
+	cd /home/yuqing/cyq/code/Tennis-Collection-Robot/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/build
 .PHONY : tennis/fast
+
+# Convenience name for target.
+src/CMakeFiles/main.dir/rule:
+	cd /home/yuqing/cyq/code/Tennis-Collection-Robot/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/main.dir/rule
+.PHONY : src/CMakeFiles/main.dir/rule
+
+# Convenience name for target.
+main: src/CMakeFiles/main.dir/rule
+
+.PHONY : main
+
+# fast build rule for target.
+main/fast:
+	cd /home/yuqing/cyq/code/Tennis-Collection-Robot/build && $(MAKE) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/build
+.PHONY : main/fast
 
 1.Method_of_exhaustion.o: 1.Method_of_exhaustion.cpp.o
 
@@ -146,7 +146,7 @@ tennis/fast:
 
 # target to build an object file
 1.Method_of_exhaustion.cpp.o:
-	cd /home/will/code/0.daily_code/37.Tennis/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/1.Method_of_exhaustion.cpp.o
+	cd /home/yuqing/cyq/code/Tennis-Collection-Robot/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/1.Method_of_exhaustion.cpp.o
 .PHONY : 1.Method_of_exhaustion.cpp.o
 
 1.Method_of_exhaustion.i: 1.Method_of_exhaustion.cpp.i
@@ -155,7 +155,7 @@ tennis/fast:
 
 # target to preprocess a source file
 1.Method_of_exhaustion.cpp.i:
-	cd /home/will/code/0.daily_code/37.Tennis/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/1.Method_of_exhaustion.cpp.i
+	cd /home/yuqing/cyq/code/Tennis-Collection-Robot/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/1.Method_of_exhaustion.cpp.i
 .PHONY : 1.Method_of_exhaustion.cpp.i
 
 1.Method_of_exhaustion.s: 1.Method_of_exhaustion.cpp.s
@@ -164,7 +164,7 @@ tennis/fast:
 
 # target to generate assembly for a file
 1.Method_of_exhaustion.cpp.s:
-	cd /home/will/code/0.daily_code/37.Tennis/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/1.Method_of_exhaustion.cpp.s
+	cd /home/yuqing/cyq/code/Tennis-Collection-Robot/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/1.Method_of_exhaustion.cpp.s
 .PHONY : 1.Method_of_exhaustion.cpp.s
 
 2.Greedy_Algorithm.o: 2.Greedy_Algorithm.cpp.o
@@ -173,7 +173,7 @@ tennis/fast:
 
 # target to build an object file
 2.Greedy_Algorithm.cpp.o:
-	cd /home/will/code/0.daily_code/37.Tennis/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/2.Greedy_Algorithm.cpp.o
+	cd /home/yuqing/cyq/code/Tennis-Collection-Robot/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/2.Greedy_Algorithm.cpp.o
 .PHONY : 2.Greedy_Algorithm.cpp.o
 
 2.Greedy_Algorithm.i: 2.Greedy_Algorithm.cpp.i
@@ -182,7 +182,7 @@ tennis/fast:
 
 # target to preprocess a source file
 2.Greedy_Algorithm.cpp.i:
-	cd /home/will/code/0.daily_code/37.Tennis/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/2.Greedy_Algorithm.cpp.i
+	cd /home/yuqing/cyq/code/Tennis-Collection-Robot/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/2.Greedy_Algorithm.cpp.i
 .PHONY : 2.Greedy_Algorithm.cpp.i
 
 2.Greedy_Algorithm.s: 2.Greedy_Algorithm.cpp.s
@@ -191,7 +191,7 @@ tennis/fast:
 
 # target to generate assembly for a file
 2.Greedy_Algorithm.cpp.s:
-	cd /home/will/code/0.daily_code/37.Tennis/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/2.Greedy_Algorithm.cpp.s
+	cd /home/yuqing/cyq/code/Tennis-Collection-Robot/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/2.Greedy_Algorithm.cpp.s
 .PHONY : 2.Greedy_Algorithm.cpp.s
 
 checkCircle.o: checkCircle.cpp.o
@@ -200,7 +200,7 @@ checkCircle.o: checkCircle.cpp.o
 
 # target to build an object file
 checkCircle.cpp.o:
-	cd /home/will/code/0.daily_code/37.Tennis/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/checkCircle.cpp.o
+	cd /home/yuqing/cyq/code/Tennis-Collection-Robot/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/checkCircle.cpp.o
 .PHONY : checkCircle.cpp.o
 
 checkCircle.i: checkCircle.cpp.i
@@ -209,7 +209,7 @@ checkCircle.i: checkCircle.cpp.i
 
 # target to preprocess a source file
 checkCircle.cpp.i:
-	cd /home/will/code/0.daily_code/37.Tennis/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/checkCircle.cpp.i
+	cd /home/yuqing/cyq/code/Tennis-Collection-Robot/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/checkCircle.cpp.i
 .PHONY : checkCircle.cpp.i
 
 checkCircle.s: checkCircle.cpp.s
@@ -218,7 +218,7 @@ checkCircle.s: checkCircle.cpp.s
 
 # target to generate assembly for a file
 checkCircle.cpp.s:
-	cd /home/will/code/0.daily_code/37.Tennis/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/checkCircle.cpp.s
+	cd /home/yuqing/cyq/code/Tennis-Collection-Robot/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/checkCircle.cpp.s
 .PHONY : checkCircle.cpp.s
 
 checkColour.o: checkColour.cpp.o
@@ -227,7 +227,7 @@ checkColour.o: checkColour.cpp.o
 
 # target to build an object file
 checkColour.cpp.o:
-	cd /home/will/code/0.daily_code/37.Tennis/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/checkColour.cpp.o
+	cd /home/yuqing/cyq/code/Tennis-Collection-Robot/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/checkColour.cpp.o
 .PHONY : checkColour.cpp.o
 
 checkColour.i: checkColour.cpp.i
@@ -236,7 +236,7 @@ checkColour.i: checkColour.cpp.i
 
 # target to preprocess a source file
 checkColour.cpp.i:
-	cd /home/will/code/0.daily_code/37.Tennis/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/checkColour.cpp.i
+	cd /home/yuqing/cyq/code/Tennis-Collection-Robot/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/checkColour.cpp.i
 .PHONY : checkColour.cpp.i
 
 checkColour.s: checkColour.cpp.s
@@ -245,7 +245,7 @@ checkColour.s: checkColour.cpp.s
 
 # target to generate assembly for a file
 checkColour.cpp.s:
-	cd /home/will/code/0.daily_code/37.Tennis/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/checkColour.cpp.s
+	cd /home/yuqing/cyq/code/Tennis-Collection-Robot/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/checkColour.cpp.s
 .PHONY : checkColour.cpp.s
 
 edge2list.o: edge2list.cpp.o
@@ -254,7 +254,7 @@ edge2list.o: edge2list.cpp.o
 
 # target to build an object file
 edge2list.cpp.o:
-	cd /home/will/code/0.daily_code/37.Tennis/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/edge2list.cpp.o
+	cd /home/yuqing/cyq/code/Tennis-Collection-Robot/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/edge2list.cpp.o
 .PHONY : edge2list.cpp.o
 
 edge2list.i: edge2list.cpp.i
@@ -263,7 +263,7 @@ edge2list.i: edge2list.cpp.i
 
 # target to preprocess a source file
 edge2list.cpp.i:
-	cd /home/will/code/0.daily_code/37.Tennis/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/edge2list.cpp.i
+	cd /home/yuqing/cyq/code/Tennis-Collection-Robot/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/edge2list.cpp.i
 .PHONY : edge2list.cpp.i
 
 edge2list.s: edge2list.cpp.s
@@ -272,7 +272,7 @@ edge2list.s: edge2list.cpp.s
 
 # target to generate assembly for a file
 edge2list.cpp.s:
-	cd /home/will/code/0.daily_code/37.Tennis/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/edge2list.cpp.s
+	cd /home/yuqing/cyq/code/Tennis-Collection-Robot/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/edge2list.cpp.s
 .PHONY : edge2list.cpp.s
 
 filter.o: filter.cpp.o
@@ -281,7 +281,7 @@ filter.o: filter.cpp.o
 
 # target to build an object file
 filter.cpp.o:
-	cd /home/will/code/0.daily_code/37.Tennis/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/filter.cpp.o
+	cd /home/yuqing/cyq/code/Tennis-Collection-Robot/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/filter.cpp.o
 .PHONY : filter.cpp.o
 
 filter.i: filter.cpp.i
@@ -290,7 +290,7 @@ filter.i: filter.cpp.i
 
 # target to preprocess a source file
 filter.cpp.i:
-	cd /home/will/code/0.daily_code/37.Tennis/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/filter.cpp.i
+	cd /home/yuqing/cyq/code/Tennis-Collection-Robot/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/filter.cpp.i
 .PHONY : filter.cpp.i
 
 filter.s: filter.cpp.s
@@ -299,7 +299,7 @@ filter.s: filter.cpp.s
 
 # target to generate assembly for a file
 filter.cpp.s:
-	cd /home/will/code/0.daily_code/37.Tennis/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/filter.cpp.s
+	cd /home/yuqing/cyq/code/Tennis-Collection-Robot/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/filter.cpp.s
 .PHONY : filter.cpp.s
 
 get_Random_points.o: get_Random_points.cpp.o
@@ -308,7 +308,7 @@ get_Random_points.o: get_Random_points.cpp.o
 
 # target to build an object file
 get_Random_points.cpp.o:
-	cd /home/will/code/0.daily_code/37.Tennis/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/get_Random_points.cpp.o
+	cd /home/yuqing/cyq/code/Tennis-Collection-Robot/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/get_Random_points.cpp.o
 .PHONY : get_Random_points.cpp.o
 
 get_Random_points.i: get_Random_points.cpp.i
@@ -317,7 +317,7 @@ get_Random_points.i: get_Random_points.cpp.i
 
 # target to preprocess a source file
 get_Random_points.cpp.i:
-	cd /home/will/code/0.daily_code/37.Tennis/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/get_Random_points.cpp.i
+	cd /home/yuqing/cyq/code/Tennis-Collection-Robot/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/get_Random_points.cpp.i
 .PHONY : get_Random_points.cpp.i
 
 get_Random_points.s: get_Random_points.cpp.s
@@ -326,7 +326,7 @@ get_Random_points.s: get_Random_points.cpp.s
 
 # target to generate assembly for a file
 get_Random_points.cpp.s:
-	cd /home/will/code/0.daily_code/37.Tennis/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/get_Random_points.cpp.s
+	cd /home/yuqing/cyq/code/Tennis-Collection-Robot/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/get_Random_points.cpp.s
 .PHONY : get_Random_points.cpp.s
 
 get_centroid.o: get_centroid.cpp.o
@@ -335,7 +335,7 @@ get_centroid.o: get_centroid.cpp.o
 
 # target to build an object file
 get_centroid.cpp.o:
-	cd /home/will/code/0.daily_code/37.Tennis/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/get_centroid.cpp.o
+	cd /home/yuqing/cyq/code/Tennis-Collection-Robot/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/get_centroid.cpp.o
 .PHONY : get_centroid.cpp.o
 
 get_centroid.i: get_centroid.cpp.i
@@ -344,7 +344,7 @@ get_centroid.i: get_centroid.cpp.i
 
 # target to preprocess a source file
 get_centroid.cpp.i:
-	cd /home/will/code/0.daily_code/37.Tennis/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/get_centroid.cpp.i
+	cd /home/yuqing/cyq/code/Tennis-Collection-Robot/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/get_centroid.cpp.i
 .PHONY : get_centroid.cpp.i
 
 get_centroid.s: get_centroid.cpp.s
@@ -353,7 +353,7 @@ get_centroid.s: get_centroid.cpp.s
 
 # target to generate assembly for a file
 get_centroid.cpp.s:
-	cd /home/will/code/0.daily_code/37.Tennis/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/get_centroid.cpp.s
+	cd /home/yuqing/cyq/code/Tennis-Collection-Robot/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/get_centroid.cpp.s
 .PHONY : get_centroid.cpp.s
 
 main.o: main.cpp.o
@@ -362,7 +362,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	cd /home/will/code/0.daily_code/37.Tennis/build && $(MAKE) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/main.cpp.o
+	cd /home/yuqing/cyq/code/Tennis-Collection-Robot/build && $(MAKE) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -371,7 +371,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	cd /home/will/code/0.daily_code/37.Tennis/build && $(MAKE) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/main.cpp.i
+	cd /home/yuqing/cyq/code/Tennis-Collection-Robot/build && $(MAKE) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -380,7 +380,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	cd /home/will/code/0.daily_code/37.Tennis/build && $(MAKE) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/main.cpp.s
+	cd /home/yuqing/cyq/code/Tennis-Collection-Robot/build && $(MAKE) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 movemet.o: movemet.cpp.o
@@ -389,7 +389,7 @@ movemet.o: movemet.cpp.o
 
 # target to build an object file
 movemet.cpp.o:
-	cd /home/will/code/0.daily_code/37.Tennis/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/movemet.cpp.o
+	cd /home/yuqing/cyq/code/Tennis-Collection-Robot/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/movemet.cpp.o
 .PHONY : movemet.cpp.o
 
 movemet.i: movemet.cpp.i
@@ -398,7 +398,7 @@ movemet.i: movemet.cpp.i
 
 # target to preprocess a source file
 movemet.cpp.i:
-	cd /home/will/code/0.daily_code/37.Tennis/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/movemet.cpp.i
+	cd /home/yuqing/cyq/code/Tennis-Collection-Robot/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/movemet.cpp.i
 .PHONY : movemet.cpp.i
 
 movemet.s: movemet.cpp.s
@@ -407,7 +407,7 @@ movemet.s: movemet.cpp.s
 
 # target to generate assembly for a file
 movemet.cpp.s:
-	cd /home/will/code/0.daily_code/37.Tennis/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/movemet.cpp.s
+	cd /home/yuqing/cyq/code/Tennis-Collection-Robot/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/movemet.cpp.s
 .PHONY : movemet.cpp.s
 
 # Help Target
@@ -417,9 +417,9 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
+	@echo "... tennis"
 	@echo "... edit_cache"
 	@echo "... main"
-	@echo "... tennis"
 	@echo "... 1.Method_of_exhaustion.o"
 	@echo "... 1.Method_of_exhaustion.i"
 	@echo "... 1.Method_of_exhaustion.s"
@@ -461,6 +461,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/will/code/0.daily_code/37.Tennis/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/yuqing/cyq/code/Tennis-Collection-Robot/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

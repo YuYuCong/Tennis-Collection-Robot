@@ -4,20 +4,20 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/will/code/0.daily_code/37.Tennis/src/main.cpp" "/home/will/code/0.daily_code/37.Tennis/build/src/CMakeFiles/main.dir/main.cpp.o"
+  "/home/yuqing/cyq/code/Tennis-Collection-Robot/src/main.cpp" "/home/yuqing/cyq/code/Tennis-Collection-Robot/build/src/CMakeFiles/main.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/usr/local/include"
-  "/usr/local/include/opencv"
+  "/opt/ros/kinetic/include/opencv-3.3.1-dev"
+  "/opt/ros/kinetic/include/opencv-3.3.1-dev/opencv"
   "../include"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/will/code/0.daily_code/37.Tennis/build/src/CMakeFiles/tennis.dir/DependInfo.cmake"
+  "/home/yuqing/cyq/code/Tennis-Collection-Robot/build/src/CMakeFiles/tennis.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

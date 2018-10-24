@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/will/code/0.daily_code/37.Tennis
+CMAKE_SOURCE_DIR = /home/yuqing/cyq/code/Tennis-Collection-Robot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/will/code/0.daily_code/37.Tennis/build
+CMAKE_BINARY_DIR = /home/yuqing/cyq/code/Tennis-Collection-Robot/build
 
 # Include any dependencies generated for this target.
 include src/CMakeFiles/main.dir/depend.make
@@ -59,16 +59,16 @@ include src/CMakeFiles/main.dir/flags.make
 
 src/CMakeFiles/main.dir/main.cpp.o: src/CMakeFiles/main.dir/flags.make
 src/CMakeFiles/main.dir/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/will/code/0.daily_code/37.Tennis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/main.dir/main.cpp.o"
-	cd /home/will/code/0.daily_code/37.Tennis/build/src && g++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/main.cpp.o -c /home/will/code/0.daily_code/37.Tennis/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yuqing/cyq/code/Tennis-Collection-Robot/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/main.dir/main.cpp.o"
+	cd /home/yuqing/cyq/code/Tennis-Collection-Robot/build/src && g++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/main.cpp.o -c /home/yuqing/cyq/code/Tennis-Collection-Robot/src/main.cpp
 
 src/CMakeFiles/main.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/main.cpp.i"
-	cd /home/will/code/0.daily_code/37.Tennis/build/src && g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/will/code/0.daily_code/37.Tennis/src/main.cpp > CMakeFiles/main.dir/main.cpp.i
+	cd /home/yuqing/cyq/code/Tennis-Collection-Robot/build/src && g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yuqing/cyq/code/Tennis-Collection-Robot/src/main.cpp > CMakeFiles/main.dir/main.cpp.i
 
 src/CMakeFiles/main.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/main.cpp.s"
-	cd /home/will/code/0.daily_code/37.Tennis/build/src && g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/will/code/0.daily_code/37.Tennis/src/main.cpp -o CMakeFiles/main.dir/main.cpp.s
+	cd /home/yuqing/cyq/code/Tennis-Collection-Robot/build/src && g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yuqing/cyq/code/Tennis-Collection-Robot/src/main.cpp -o CMakeFiles/main.dir/main.cpp.s
 
 src/CMakeFiles/main.dir/main.cpp.o.requires:
 
@@ -91,55 +91,54 @@ main_EXTERNAL_OBJECTS =
 ../bin/main: src/CMakeFiles/main.dir/main.cpp.o
 ../bin/main: src/CMakeFiles/main.dir/build.make
 ../bin/main: ../lib/libtennis.so
-../bin/main: /usr/local/lib/libopencv_stitching.so.3.3.1
-../bin/main: /usr/local/lib/libopencv_superres.so.3.3.1
-../bin/main: /usr/local/lib/libopencv_videostab.so.3.3.1
-../bin/main: /usr/local/lib/libopencv_aruco.so.3.3.1
-../bin/main: /usr/local/lib/libopencv_bgsegm.so.3.3.1
-../bin/main: /usr/local/lib/libopencv_bioinspired.so.3.3.1
-../bin/main: /usr/local/lib/libopencv_ccalib.so.3.3.1
-../bin/main: /usr/local/lib/libopencv_dpm.so.3.3.1
-../bin/main: /usr/local/lib/libopencv_face.so.3.3.1
-../bin/main: /usr/local/lib/libopencv_photo.so.3.3.1
-../bin/main: /usr/local/lib/libopencv_freetype.so.3.3.1
-../bin/main: /usr/local/lib/libopencv_fuzzy.so.3.3.1
-../bin/main: /usr/local/lib/libopencv_hdf.so.3.3.1
-../bin/main: /usr/local/lib/libopencv_img_hash.so.3.3.1
-../bin/main: /usr/local/lib/libopencv_line_descriptor.so.3.3.1
-../bin/main: /usr/local/lib/libopencv_optflow.so.3.3.1
-../bin/main: /usr/local/lib/libopencv_reg.so.3.3.1
-../bin/main: /usr/local/lib/libopencv_rgbd.so.3.3.1
-../bin/main: /usr/local/lib/libopencv_saliency.so.3.3.1
-../bin/main: /usr/local/lib/libopencv_sfm.so.3.3.1
-../bin/main: /usr/local/lib/libopencv_stereo.so.3.3.1
-../bin/main: /usr/local/lib/libopencv_structured_light.so.3.3.1
-../bin/main: /usr/local/lib/libopencv_viz.so.3.3.1
-../bin/main: /usr/local/lib/libopencv_phase_unwrapping.so.3.3.1
-../bin/main: /usr/local/lib/libopencv_surface_matching.so.3.3.1
-../bin/main: /usr/local/lib/libopencv_tracking.so.3.3.1
-../bin/main: /usr/local/lib/libopencv_datasets.so.3.3.1
-../bin/main: /usr/local/lib/libopencv_plot.so.3.3.1
-../bin/main: /usr/local/lib/libopencv_text.so.3.3.1
-../bin/main: /usr/local/lib/libopencv_dnn.so.3.3.1
-../bin/main: /usr/local/lib/libopencv_xfeatures2d.so.3.3.1
-../bin/main: /usr/local/lib/libopencv_ml.so.3.3.1
-../bin/main: /usr/local/lib/libopencv_shape.so.3.3.1
-../bin/main: /usr/local/lib/libopencv_video.so.3.3.1
-../bin/main: /usr/local/lib/libopencv_ximgproc.so.3.3.1
-../bin/main: /usr/local/lib/libopencv_calib3d.so.3.3.1
-../bin/main: /usr/local/lib/libopencv_features2d.so.3.3.1
-../bin/main: /usr/local/lib/libopencv_flann.so.3.3.1
-../bin/main: /usr/local/lib/libopencv_highgui.so.3.3.1
-../bin/main: /usr/local/lib/libopencv_videoio.so.3.3.1
-../bin/main: /usr/local/lib/libopencv_xobjdetect.so.3.3.1
-../bin/main: /usr/local/lib/libopencv_imgcodecs.so.3.3.1
-../bin/main: /usr/local/lib/libopencv_objdetect.so.3.3.1
-../bin/main: /usr/local/lib/libopencv_xphoto.so.3.3.1
-../bin/main: /usr/local/lib/libopencv_imgproc.so.3.3.1
-../bin/main: /usr/local/lib/libopencv_core.so.3.3.1
+../bin/main: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_stitching3.so.3.3.1
+../bin/main: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_superres3.so.3.3.1
+../bin/main: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_videostab3.so.3.3.1
+../bin/main: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_aruco3.so.3.3.1
+../bin/main: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_bgsegm3.so.3.3.1
+../bin/main: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_bioinspired3.so.3.3.1
+../bin/main: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_ccalib3.so.3.3.1
+../bin/main: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_cvv3.so.3.3.1
+../bin/main: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_dpm3.so.3.3.1
+../bin/main: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_face3.so.3.3.1
+../bin/main: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_photo3.so.3.3.1
+../bin/main: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_fuzzy3.so.3.3.1
+../bin/main: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_hdf3.so.3.3.1
+../bin/main: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_img_hash3.so.3.3.1
+../bin/main: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_line_descriptor3.so.3.3.1
+../bin/main: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_optflow3.so.3.3.1
+../bin/main: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_reg3.so.3.3.1
+../bin/main: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_rgbd3.so.3.3.1
+../bin/main: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_saliency3.so.3.3.1
+../bin/main: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_stereo3.so.3.3.1
+../bin/main: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_structured_light3.so.3.3.1
+../bin/main: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_viz3.so.3.3.1
+../bin/main: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_phase_unwrapping3.so.3.3.1
+../bin/main: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_surface_matching3.so.3.3.1
+../bin/main: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_tracking3.so.3.3.1
+../bin/main: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_datasets3.so.3.3.1
+../bin/main: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_plot3.so.3.3.1
+../bin/main: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_text3.so.3.3.1
+../bin/main: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_dnn3.so.3.3.1
+../bin/main: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_xfeatures2d3.so.3.3.1
+../bin/main: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_ml3.so.3.3.1
+../bin/main: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_shape3.so.3.3.1
+../bin/main: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_video3.so.3.3.1
+../bin/main: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_ximgproc3.so.3.3.1
+../bin/main: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_calib3d3.so.3.3.1
+../bin/main: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_features2d3.so.3.3.1
+../bin/main: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_flann3.so.3.3.1
+../bin/main: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_highgui3.so.3.3.1
+../bin/main: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_videoio3.so.3.3.1
+../bin/main: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_xobjdetect3.so.3.3.1
+../bin/main: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgcodecs3.so.3.3.1
+../bin/main: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_objdetect3.so.3.3.1
+../bin/main: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_xphoto3.so.3.3.1
+../bin/main: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgproc3.so.3.3.1
+../bin/main: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_core3.so.3.3.1
 ../bin/main: src/CMakeFiles/main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/will/code/0.daily_code/37.Tennis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../bin/main"
-	cd /home/will/code/0.daily_code/37.Tennis/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/yuqing/cyq/code/Tennis-Collection-Robot/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../bin/main"
+	cd /home/yuqing/cyq/code/Tennis-Collection-Robot/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 src/CMakeFiles/main.dir/build: ../bin/main
@@ -151,10 +150,10 @@ src/CMakeFiles/main.dir/requires: src/CMakeFiles/main.dir/main.cpp.o.requires
 .PHONY : src/CMakeFiles/main.dir/requires
 
 src/CMakeFiles/main.dir/clean:
-	cd /home/will/code/0.daily_code/37.Tennis/build/src && $(CMAKE_COMMAND) -P CMakeFiles/main.dir/cmake_clean.cmake
+	cd /home/yuqing/cyq/code/Tennis-Collection-Robot/build/src && $(CMAKE_COMMAND) -P CMakeFiles/main.dir/cmake_clean.cmake
 .PHONY : src/CMakeFiles/main.dir/clean
 
 src/CMakeFiles/main.dir/depend:
-	cd /home/will/code/0.daily_code/37.Tennis/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/will/code/0.daily_code/37.Tennis /home/will/code/0.daily_code/37.Tennis/src /home/will/code/0.daily_code/37.Tennis/build /home/will/code/0.daily_code/37.Tennis/build/src /home/will/code/0.daily_code/37.Tennis/build/src/CMakeFiles/main.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/yuqing/cyq/code/Tennis-Collection-Robot/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yuqing/cyq/code/Tennis-Collection-Robot /home/yuqing/cyq/code/Tennis-Collection-Robot/src /home/yuqing/cyq/code/Tennis-Collection-Robot/build /home/yuqing/cyq/code/Tennis-Collection-Robot/build/src /home/yuqing/cyq/code/Tennis-Collection-Robot/build/src/CMakeFiles/main.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/CMakeFiles/main.dir/depend
 
