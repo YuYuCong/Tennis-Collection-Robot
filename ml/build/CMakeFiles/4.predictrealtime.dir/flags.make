@@ -6,5 +6,5 @@ CXX_FLAGS = -std=c++11 -march=native -O3 -g
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -isystem /usr/local/include -isystem /usr/local/include/opencv -I/home/will/code/0.daily_code/37.Tennis/include 
+CXX_INCLUDES = -isystem /usr/local/include -isystem /usr/local/include/opencv 
 

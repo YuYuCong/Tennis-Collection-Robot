@@ -26,3 +26,6 @@ target_link_libraries( 2.training_svm ${OpenCV_LIBS} )
 
 add_executable( 3.predict 3.predict.cpp )
 target_link_libraries( 3.predict ${OpenCV_LIBS} )
+
+add_executable( 4.predictrealtime 4.predictrealtime.cpp )
+target_link_libraries( 4.predictrealtime ${OpenCV_LIBS} )

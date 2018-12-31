@@ -34,7 +34,7 @@ non_linear_svms_test.cpp
 
 # Build
 
-mkdic build
+mkdir build
 cd build
 cmake ..
 make 

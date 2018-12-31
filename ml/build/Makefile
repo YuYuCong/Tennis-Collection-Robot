@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/will/code/0.daily_code/38.machine learning/my_ml"
+CMAKE_SOURCE_DIR = /home/will/code/0.daily_code/37.Tennis/ml
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/will/code/0.daily_code/38.machine learning/my_ml/build"
+CMAKE_BINARY_DIR = /home/will/code/0.daily_code/37.Tennis/ml/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/will/code/0.daily_code/38.machine learning/my_ml/build/CMakeFiles" "/home/will/code/0.daily_code/38.machine learning/my_ml/build/CMakeFiles/progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/will/code/0.daily_code/37.Tennis/ml/build/CMakeFiles /home/will/code/0.daily_code/37.Tennis/ml/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/will/code/0.daily_code/38.machine learning/my_ml/build/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/will/code/0.daily_code/37.Tennis/ml/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -109,6 +109,19 @@ preinstall/fast:
 depend:
 	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+#=============================================================================
+# Target rules for targets named 4.predictrealtime
+
+# Build rule for target.
+4.predictrealtime: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 4.predictrealtime
+.PHONY : 4.predictrealtime
+
+# fast build rule for target.
+4.predictrealtime/fast:
+	$(MAKE) -f CMakeFiles/4.predictrealtime.dir/build.make CMakeFiles/4.predictrealtime.dir/build
+.PHONY : 4.predictrealtime/fast
 
 #=============================================================================
 # Target rules for targets named 3.predict
@@ -283,6 +296,33 @@ non_linear_svms_test/fast:
 	$(MAKE) -f CMakeFiles/3.predict.dir/build.make CMakeFiles/3.predict.dir/3.predict.cpp.s
 .PHONY : 3.predict.cpp.s
 
+4.predictrealtime.o: 4.predictrealtime.cpp.o
+
+.PHONY : 4.predictrealtime.o
+
+# target to build an object file
+4.predictrealtime.cpp.o:
+	$(MAKE) -f CMakeFiles/4.predictrealtime.dir/build.make CMakeFiles/4.predictrealtime.dir/4.predictrealtime.cpp.o
+.PHONY : 4.predictrealtime.cpp.o
+
+4.predictrealtime.i: 4.predictrealtime.cpp.i
+
+.PHONY : 4.predictrealtime.i
+
+# target to preprocess a source file
+4.predictrealtime.cpp.i:
+	$(MAKE) -f CMakeFiles/4.predictrealtime.dir/build.make CMakeFiles/4.predictrealtime.dir/4.predictrealtime.cpp.i
+.PHONY : 4.predictrealtime.cpp.i
+
+4.predictrealtime.s: 4.predictrealtime.cpp.s
+
+.PHONY : 4.predictrealtime.s
+
+# target to generate assembly for a file
+4.predictrealtime.cpp.s:
+	$(MAKE) -f CMakeFiles/4.predictrealtime.dir/build.make CMakeFiles/4.predictrealtime.dir/4.predictrealtime.cpp.s
+.PHONY : 4.predictrealtime.cpp.s
+
 non_linear_svms_test.o: non_linear_svms_test.cpp.o
 
 .PHONY : non_linear_svms_test.o
@@ -317,6 +357,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
+	@echo "... 4.predictrealtime"
 	@echo "... edit_cache"
 	@echo "... 3.predict"
 	@echo "... 0.allinone"
@@ -335,6 +376,9 @@ help:
 	@echo "... 3.predict.o"
 	@echo "... 3.predict.i"
 	@echo "... 3.predict.s"
+	@echo "... 4.predictrealtime.o"
+	@echo "... 4.predictrealtime.i"
+	@echo "... 4.predictrealtime.s"
 	@echo "... non_linear_svms_test.o"
 	@echo "... non_linear_svms_test.i"
 	@echo "... non_linear_svms_test.s"

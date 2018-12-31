@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/will/code/0.daily_code/38.machine learning/my_ml/0.allinone.cpp" "/home/will/code/0.daily_code/38.machine learning/my_ml/build/CMakeFiles/0.allinone.dir/0.allinone.cpp.o"
+  "/home/will/code/0.daily_code/37.Tennis/ml/0.allinone.cpp" "/home/will/code/0.daily_code/37.Tennis/ml/build/CMakeFiles/0.allinone.dir/0.allinone.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

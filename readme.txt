@@ -1,6 +1,6 @@
 # Build
 
-mkdic build
+mkdir build
 cd build
 cmake ..
 make 
