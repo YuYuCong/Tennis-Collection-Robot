@@ -8,6 +8,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/tennis.dir/movemet.cpp.o"
   "CMakeFiles/tennis.dir/1.Method_of_exhaustion.cpp.o"
   "CMakeFiles/tennis.dir/2.Greedy_Algorithm.cpp.o"
+  "CMakeFiles/tennis.dir/ProjectiveTransform.cpp.o"
   "../../lib/libtennis.pdb"
   "../../lib/libtennis.so"
 )

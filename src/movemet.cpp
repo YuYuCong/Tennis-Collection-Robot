@@ -7,7 +7,7 @@
  * @brief 机器人动作组转换.
  * 			输入：路径锚点，输出：动作组
  */
-//Refrence:基于改进A*算法的室内移动机器人路径规划_王殿君_( 北京石油化工学院 机械工程学院,北京 102617 )
+//Reference:基于改进A*算法的室内移动机器人路径规划_王殿君_( 北京石油化工学院 机械工程学院,北京 102617 )
 
  void movement(vector<cv::Point>& path,  vector<double> & rho, vector<double> & theta, vector<double> & angle)
 {

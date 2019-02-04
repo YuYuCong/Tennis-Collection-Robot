@@ -57,7 +57,7 @@ Mat get_centroid(vector<Point> & Points, vector<Point> & Points_checked)
 	waitKey(0);
 
 
-	//--膨胀出大网球，将距离较近的园合为一个连通域
+	//--膨胀出大网球，将距离较近的圆合为一个连通域
 	Mat image2 = image.clone();
 	for (int i = 0; i < Points.size(); i++) {
 		circle(image2, Points[i], bigball_ball * radius, Scalar(127,255,0), -1, lineType);

@@ -34,6 +34,23 @@ Copyright ©2018 William Yu. All rights reserved.
 
 上图中展示了当两个网球距离过近时，机器人可以一起收集。
 
+### 2. Usage
+
+Compile
+
+```shell
+$ mkdir build
+$ cd build
+$ cmake ..
+$ make
+```
+
+Launch
+
+```shell
+$ ./bin/main
+```
+
 ## Contributing / Contact
 
 Feel free to [contact me](mailto:windmillyucong@163.com) anytime for anything.

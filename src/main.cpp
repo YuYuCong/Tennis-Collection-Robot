@@ -47,20 +47,26 @@ int main ( int argc, char** argv )
 		Mat src;
 		//不使用相机
 		//capture >> src;
-		Mat frame = imread("../data/ball_6.jpg");
-		resize(frame, src, Size(1920, 1440), 0, 0, CV_INTER_LINEAR);
+		src = imread("./data/ball_6.jpg");
+		if (src.empty())
+		{
+			cout << "Image load error";
+			return 0;
+		}
+		//resize(src, src, Size(1920, 1440), 0, 0, CV_INTER_LINEAR);
 		namedWindow("src", CV_WINDOW_NORMAL );
 		imshow("src", src );
-		waitKey(0);
+		//waitKey(0);
 
 		Mat edge_img(src.rows, src.cols, CV_8UC1,Scalar(0));
 		Mat edge(src.rows, src.cols, CV_8UC1,Scalar(0));
 		Mat checkcolour(src.rows, src.cols, CV_8UC1, Scalar(0));
+		Mat img_c = Mat::zeros( src.rows, src.cols, src.type() );
 
 		//前期模糊滤波
 		blur(src, src, Size(20, 20), Point(-1, -1));
 		imshow("src", src );
-		waitKey(0);
+		//waitKey(0);
 
 		//-----------------------------------------------------
 		// [1]：基于颜色检测
@@ -68,7 +74,7 @@ int main ( int argc, char** argv )
 		colour(src, checkcolour);
 		namedWindow("checkcolour", CV_WINDOW_NORMAL);
 		imshow("checkcolour", checkcolour);
-		waitKey(0);
+		//waitKey(0);
 
 		//-----------------------------------------------------
 		// 滤波系列
@@ -76,14 +82,14 @@ int main ( int argc, char** argv )
 		filter(checkcolour, edge_img);
 		namedWindow("filter", CV_WINDOW_NORMAL);
 		imshow("filter", edge_img);
-		waitKey(0);
+		//waitKey(0);
 
 		//--边缘输出
 		edge2list(contours_dst, edge_img, hierarchy);
 		drawContour(edge, contours_dst);
 		namedWindow("edge", CV_WINDOW_NORMAL);
 		imshow("edge", edge);
-		waitKey(0);
+		//waitKey(0);
 
 		//-----------------------------------------------------
 		//[2.1]：基于形状圆形检测
@@ -96,7 +102,7 @@ int main ( int argc, char** argv )
 			circle(src, points[i], 2, Scalar(0,0,0), 3);
 		namedWindow("points", CV_WINDOW_NORMAL);
 		imshow("points", src);
-		waitKey(0);
+		//waitKey(0);
 		cout<<points.size()<<endl;
 
 
@@ -124,11 +130,11 @@ int main ( int argc, char** argv )
 		imshow("B", mv[1]);
 		namedWindow("R", CV_WINDOW_NORMAL);
 		imshow("R", mv[2]);
-		waitKey(0);
+		//waitKey(0);
 		//二值化
 		threshold(mv[0], mv[0], 33, 255, THRESH_BINARY); 
 		imshow("G", mv[0]);
-		waitKey(0);
+		//waitKey(0);
 		vector<Vec3f> circles; 
 		//vector<Point> points;
 		//[霍夫圆检测]
@@ -151,7 +157,7 @@ int main ( int argc, char** argv )
 		}
 		namedWindow("circle", WINDOW_KEEPRATIO);
 		imshow("circle", src);
-		waitKey(0);
+		//waitKey(0);
 #endif
 
 
@@ -218,11 +224,10 @@ int main ( int argc, char** argv )
 			printf("the x is%d,y is%d", x, y);
 		}
 
-		
-
-
-
-
+		//-----------------------------------------------------
+		//[1]：投影变换：之前的程序普适性太差，调整为基于标定板的外参标定
+		//-------------------------------------------------
+		ProjectiveTransform(src, img_c);
 
 
 

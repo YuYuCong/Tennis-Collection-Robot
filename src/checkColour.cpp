@@ -89,7 +89,7 @@ void colour(Mat &src, Mat &dst)
 				r2 = r2*r2;
 				if ((r1 < 81.00) && (r2<360)) //此处参数需要调整
 				{
-					out_data[j] = 255;
+					out_data[j] = 134;
 				}
 			//}
 		}

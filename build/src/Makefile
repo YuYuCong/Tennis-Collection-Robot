@@ -194,6 +194,33 @@ tennis/fast:
 	cd /home/will/code/0.daily_code/37.Tennis/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/2.Greedy_Algorithm.cpp.s
 .PHONY : 2.Greedy_Algorithm.cpp.s
 
+ProjectiveTransform.o: ProjectiveTransform.cpp.o
+
+.PHONY : ProjectiveTransform.o
+
+# target to build an object file
+ProjectiveTransform.cpp.o:
+	cd /home/will/code/0.daily_code/37.Tennis/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/ProjectiveTransform.cpp.o
+.PHONY : ProjectiveTransform.cpp.o
+
+ProjectiveTransform.i: ProjectiveTransform.cpp.i
+
+.PHONY : ProjectiveTransform.i
+
+# target to preprocess a source file
+ProjectiveTransform.cpp.i:
+	cd /home/will/code/0.daily_code/37.Tennis/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/ProjectiveTransform.cpp.i
+.PHONY : ProjectiveTransform.cpp.i
+
+ProjectiveTransform.s: ProjectiveTransform.cpp.s
+
+.PHONY : ProjectiveTransform.s
+
+# target to generate assembly for a file
+ProjectiveTransform.cpp.s:
+	cd /home/will/code/0.daily_code/37.Tennis/build && $(MAKE) -f src/CMakeFiles/tennis.dir/build.make src/CMakeFiles/tennis.dir/ProjectiveTransform.cpp.s
+.PHONY : ProjectiveTransform.cpp.s
+
 checkCircle.o: checkCircle.cpp.o
 
 .PHONY : checkCircle.o
@@ -426,6 +453,9 @@ help:
 	@echo "... 2.Greedy_Algorithm.o"
 	@echo "... 2.Greedy_Algorithm.i"
 	@echo "... 2.Greedy_Algorithm.s"
+	@echo "... ProjectiveTransform.o"
+	@echo "... ProjectiveTransform.i"
+	@echo "... ProjectiveTransform.s"
 	@echo "... checkCircle.o"
 	@echo "... checkCircle.i"
 	@echo "... checkCircle.s"

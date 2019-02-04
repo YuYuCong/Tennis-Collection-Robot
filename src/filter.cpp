@@ -9,7 +9,7 @@ void filter(Mat &src, Mat &dst)
 {
 	namedWindow("before_filter", CV_WINDOW_NORMAL);
 	imshow("before_filter", src);
-	waitKey(0);
+	//waitKey(0);
 
 	uchar *dst_data;
 	uchar *out_data;
@@ -22,21 +22,21 @@ void filter(Mat &src, Mat &dst)
 	dilate(src, src, element3);
 	namedWindow("dilate_filter", CV_WINDOW_NORMAL);
 	imshow("dilate_filter", src);
-	waitKey(0);
+	//waitKey(0);
 
 	//双边滤波
 	Mat bilateral_filter;
 	bilateralFilter(src, bilateral_filter, 9, 50, 70);
 	namedWindow("bilateral_filter", CV_WINDOW_NORMAL);
 	imshow("bilateral_filter", bilateral_filter);
-	waitKey(0);
+	//waitKey(0);
 
 	//Canny算子提取边缘
 	Mat canny;
 	Canny(bilateral_filter, canny, 150, 120);
 	namedWindow("canny", CV_WINDOW_NORMAL);
 	imshow("canny", canny);
-	waitKey(0);
+	//waitKey(0);
 	
 	
 	//Mat out, out2;
