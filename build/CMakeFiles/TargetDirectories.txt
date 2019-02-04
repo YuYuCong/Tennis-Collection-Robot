@@ -1,6 +1,0 @@
-/home/will/code/0.daily_code/37.Tennis/build/CMakeFiles/edit_cache.dir
-/home/will/code/0.daily_code/37.Tennis/build/CMakeFiles/rebuild_cache.dir
-/home/will/code/0.daily_code/37.Tennis/build/src/CMakeFiles/rebuild_cache.dir
-/home/will/code/0.daily_code/37.Tennis/build/src/CMakeFiles/edit_cache.dir
-/home/will/code/0.daily_code/37.Tennis/build/src/CMakeFiles/main.dir
-/home/will/code/0.daily_code/37.Tennis/build/src/CMakeFiles/tennis.dir
