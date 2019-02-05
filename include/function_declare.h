@@ -77,7 +77,9 @@ Mat get_centroid(vector<Point> & Points, vector<Point> & Points_checked);
 void movement(vector<cv::Point>& path, vector<double> & rho, vector<double> & theta, vector<double> & angle);
 /* 获取随机点 */
 void get_Random_points(vector<cv::Point>& Random_points, int NUMBER);
+/* 投影变换-图片转换 */
+void ProjectiveTransform(Mat &src, Mat &dst, Mat &transform);
 /* 投影变换-坐标转换 */
-void ProjectiveTransform(Mat &src, Mat &dst);
+void ProjectiveTransformPoint(vector<Point> &ponits, vector<Point> &points_trans, Mat& transform);
 
 #endif // !FUNCTION_DECLARE_H

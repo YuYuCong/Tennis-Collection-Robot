@@ -47,7 +47,7 @@ int main ( int argc, char** argv )
 		Mat src;
 		//不使用相机
 		//capture >> src;
-		src = imread("./data/ball_6.jpg");
+		src = imread("./data/ball_7.jpg");
 		if (src.empty())
 		{
 			cout << "Image load error";
@@ -103,7 +103,6 @@ int main ( int argc, char** argv )
 		namedWindow("points", CV_WINDOW_NORMAL);
 		imshow("points", src);
 		//waitKey(0);
-		cout<<points.size()<<endl;
 
 
 
@@ -116,7 +115,7 @@ int main ( int argc, char** argv )
 //		自己写的一大堆反而可能不及一句函数调好了参数效果好，
 //      所以添加trackbar是个好选择，突然打算给某位同学布置点作业...
 
-#define useHoughCircles
+//#define useHoughCircles
 
 #ifdef useHoughCircles		
 		//-----------------------------------------------------
@@ -173,61 +172,66 @@ int main ( int argc, char** argv )
 		//************************************************************************************************
 		// STEP2：坐标修正
 		//****************************************************************************************
-		//--坐标修正
-		//参数
-		double center_x, center_y;//中心值坐标
-		float kx, ky, bx, by;   //kx,ky为系数，bx,by为偏置
-		kx = 1;
-		ky = 1;
-		bx = 0;
-		by = 0;
+		//-----------------------------------------------------
+		//[1]：坐标修正
+		//-------------------------------------------------
+		// //参数
+		// double center_x, center_y;//中心值坐标
+		// float kx, ky, bx, by;   //kx,ky为系数，bx,by为偏置
+		// kx = 1;
+		// ky = 1;
+		// bx = 0;
+		// by = 0;
 
-		//--相机内参
-		double fx = 2671.557;
-		double fy = 2680.628;
-		double cx = 1660.216;
-		double cy = 1213.749;       
+		// //--相机内参
+		// double fx = 2671.557;
+		// double fy = 2680.628;
+		// double cx = 1660.216;
+		// double cy = 1213.749;       
 		
-		//--相机位姿参数
-		int theta_1=77;//水平视场角
-		int theta_2=53;//垂直视场角
-		int pitch=60;//俯仰角
-		int height=30;//车高
-		int theta_x1;//绝对值
+		// //--相机位姿参数
+		// int theta_1=77;//水平视场角
+		// int theta_2=53;//垂直视场角
+		// int pitch=60;//俯仰角
+		// int height=30;//车高
+		// int theta_x1;//绝对值
 		
 		
-		//坐标转换
-		for (int i = 0; i < points.size(); i++)
-		{
-			int x = points[i].x;
-			int y = points[i].y;
+		// //坐标转换
+		// for (int i = 0; i < points.size(); i++)
+		// {
+		// 	int x = points[i].x;
+		// 	int y = points[i].y;
 			
-			//x = x*fx + cx;
-			//y = y*fy + cy;
-			x = x / 0.588;
-			y = y / 0.588;
-			x = kx *x + bx;
-			y = ky *y + by;
+		// 	//x = x*fx + cx;
+		// 	//y = y*fy + cy;
+		// 	x = x / 0.588;
+		// 	y = y / 0.588;
+		// 	x = kx *x + bx;
+		// 	y = ky *y + by;
 
-			//printf("the x y is %d,%d", x, y);
+		// 	//printf("the x y is %d,%d", x, y);
 
-			int theta_x = (x - 1660)*theta_1 / 3264;//极坐标角度值可输出
-			//theta_x = theta_x - 0;
+		// 	int theta_x = (x - 1660)*theta_1 / 3264;//极坐标角度值可输出
+		// 	//theta_x = theta_x - 0;
 			
-			int distance_y = 0.665*height * tan((((1213 - y)*theta_2 / 2448) + pitch)*pi / 180)-36;  //直角坐标y输出
-			//if(theta_x < 0)
-				//theta_x1 = -theta_x;
-			//distance_y = 720+ distance_y;
-			x = distance_y * tan( theta_x*pi / 180 );
-			points[i].x = x;
-			points[i].y = distance_y;
-			printf("the x is%d,y is%d", x, y);
-		}
+		// 	int distance_y = 0.665*height * tan((((1213 - y)*theta_2 / 2448) + pitch)*pi / 180)-36;  //直角坐标y输出
+		// 	//if(theta_x < 0)
+		// 		//theta_x1 = -theta_x;
+		// 	//distance_y = 720+ distance_y;
+		// 	x = distance_y * tan( theta_x*pi / 180 );
+		// 	points[i].x = x;
+		// 	points[i].y = distance_y;
+		// 	printf("the x is%d,y is%d", x, y);
+		// }
 
 		//-----------------------------------------------------
-		//[1]：投影变换：之前的程序普适性太差，调整为基于标定板的外参标定
+		//[2]：投影变换：之前的程序普适性太差，调整为基于标定板的外参标定
 		//-------------------------------------------------
-		ProjectiveTransform(src, img_c);
+		Mat transform(3, 3, CV_32FC1);
+		ProjectiveTransform(src, img_c, transform);
+		vector<Point> points_trans;
+		ProjectiveTransformPoint(points, points_trans, transform);
 
 
 

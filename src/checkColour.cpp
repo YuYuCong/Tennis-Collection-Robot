@@ -66,7 +66,6 @@ bool checkColor(Mat * img, Point2i &center, double r_d,double proportion)
  * @author Yang Qi
  * @brief 颜色空间域滤波
  */
-//此函数的参数需要调整，回归数值为经验数值
 void colour(Mat &src, Mat &dst)
 {
 	uchar *src_data;
@@ -81,15 +80,15 @@ void colour(Mat &src, Mat &dst)
 			//if (src_data[j] > 100)
 			//{
 				long r1,r2;
-				r1 = -2.499 - 0.3342 * src.at<cv::Vec3b>(i, j)[0] + 1.051 * src.at<cv::Vec3b>(i, j)[1]; //线性回归
+				r1 = -2.499 - 0.3342 * src.at<cv::Vec3b>(i, j)[0] + 1.051 * src.at<cv::Vec3b>(i, j)[1];
 				r2 = 0.8618 * src.at<cv::Vec3b>(i, j)[1] + 25.81;
 				r1 = r1 - src.at<cv::Vec3b>(i, j)[2];
 				r2 = r2 - src.at<cv::Vec3b>(i, j)[2];
 				r1 = r1*r1;
 				r2 = r2*r2;
-				if ((r1 < 81.00) && (r2<360)) //此处参数需要调整
+				if ((r1 < 81.00) && (r2<360)) 
 				{
-					out_data[j] = 134;
+					out_data[j] = 255;
 				}
 			//}
 		}
