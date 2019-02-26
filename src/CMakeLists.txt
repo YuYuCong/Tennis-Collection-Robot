@@ -18,3 +18,6 @@ target_link_libraries( tennis
 
 add_executable( main main.cpp )
 target_link_libraries( main tennis )
+
+add_executable( FrameDiff FrameDiff.cpp )
+target_link_libraries( FrameDiff tennis )
